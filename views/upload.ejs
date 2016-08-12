@@ -1,0 +1,77 @@
+<html>
+<%- include('header', {title:'A Luan'}) -%>
+<script src="/javascripts/fileinput.min.js"></script>
+<script src="/javascripts/fileinput_locale_zh.js"></script>
+<link href="/stylesheets/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
+  <body>
+
+  <div id="container" class="container">
+    <form class="well" role="form" method="post" id="upload" enctype='multipart/form-data'>
+    <h2 class="form-signin-heading">上传图片</h2>
+        <div class="row">
+    <input id="fulAvatar" name="fulAvatar" type="file" class="file" data-show-upload="false" data-preview-file-type="image" />
+            </div>
+    <br/>
+    <legend>图片信息</legend>
+  <label>PasterGoupID</label>
+  <input type="text" name='groupID' id="group" placeholder="测试/发布只需填写此项">
+    <label>PasterID</label>
+  <input type="text" name='picID' placeholder="Number Only">
+        <br/><br/>
+      <label>Image Name</label>
+  <input type="text" name='picName' placeholder="Default is the file name">
+    <label>Paster Type</label>
+  <input type="text" name='picType'>
+        <br/><br/>
+  <label>Parameters</label>
+   <div class="row">
+  <input type="text" name='p1' class="col-md-2" placeholder="shiftScale">
+  <input type="text" name='p2' class="col-md-2" placeholder="shiftX">
+  <input type="text" name='p3' class="col-md-2" placeholder="shiftY">
+  <input type="text" name='p4' class="col-md-2" placeholder="width">
+  <input type="text" name='p5' class="col-md-2" placeholder="height">
+  </div>
+  <br/>  
+<button id="btnSub" class="btn btn-lg btn-primary" type="submit">上传</button>
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" type="button">测试</button>
+        <button type="button" class="btn btn-lg btn-primary" onclick="pickup2()">组图发布</button>
+
+    </form>
+</div>
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close"
+                          data-dismiss="modal" aria-hidden="true">
+                      &times;
+                  </button>
+                  <h4 class="modal-title" id="myModalLabel">
+                      注意!!!
+                  </h4>
+              </div>
+              <div class="modal-body">
+                  确保该组效果所有的素材都已上传
+              </div>
+              <div class="modal-footer">
+
+                  <button type="button" class="btn btn-default" data-dismiss="modal">关闭 </button>
+
+                  <button type="button" class="btn btn-primary" onclick="pickup()">提交</button>
+
+              </div>
+          </div><!-- /.modal-content -->
+      </div><!-- /.modal -->
+  </div>
+  </body>
+<script>
+    function pickup() {
+        var g = $("#group").val();//#gotopagenum是文本框的id属性
+        location.href = "/testview?testg="+g;//location.href实现客户端页面的跳转
+    }
+    function pickup2() {
+        var g = $("#group").val();//#gotopagenum是文本框的id属性
+        location.href = "/t2p";//location.href实现客户端页面的跳转
+    }
+    </script>
+    </html>

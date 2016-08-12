@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<%- include('header', {title:'A Luan'}) -%>
+<div class="jumbotron">
+<h1>A LUAN</h1>
+<p>欢迎来到ALUAN管理界面，这里其实啥都没有，请勿暴力破解</p>
+<p>
+<% if (!user) { %>
+<a class="btn btn-primary btn-large" href="/login">LOGIN</a>
+<a class="btn btn-large" href="/"></a>
+<%}%>
+</p>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-md-3">
+<h2>  ADTQOO SAID</h2>
+<p>POST 1</p>
+</div>
+<div class="col-md-3">
+<h2>LAOHAN SAID</h2>
+<p> POST 2 </p>
+</div>
+<div class="col-md-3">
+<h2>FU SAID</h2>
+<p>POST 3</p>
+</div>
+<div class="col-md-3">
+<h2>GRANDPA XI SAID</h2>
+<p>POST 4</p>
+</div>
+</div>
+</div>
+<%- include('footer') -%>
+</html>

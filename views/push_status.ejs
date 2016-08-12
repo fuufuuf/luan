@@ -1,0 +1,17 @@
+<%- include('header', {title:'A Luan'}) -%>
+<table class="table table-striped">
+    <h2>推送状态</h2>
+    <thead>
+    <tr>
+        <th>objID</th>
+        <th>状态</th>
+        <th>推送时间</th>
+        <th>推送内容</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% pp.forEach(function(p){ %>
+    <%- include('onepush', p) %>
+    <% }) %>
+    </tbody>
+</table>

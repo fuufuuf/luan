@@ -1,0 +1,62 @@
+<html>
+<%- include('header', {title:'A Luan'}) -%>
+<script src="/javascripts/fileinput.min.js"></script>
+<script src="/javascripts/fileinput_locale_zh.js"></script>
+<link href="/stylesheets/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
+  <body>
+
+  <div id="container" class="container">
+    <form class="well" role="form" method="post" id="upload" enctype='multipart/form-data'>
+    <h2 class="form-signin-heading">组图信息</h2>
+
+  <h4>groupID <input type="text" name='GroupID' id="group" placeholder="普通发布只需填写此项"></h4>
+        <br/><br/>
+  <label>热点组图信息</label>
+   <div class="row">
+  <h5>Random Rate</h5><input type="text" id='rrate'  value=<%=val%>>
+  <h5>Priority</h5><input type="text" id='Priority'  placeholder="1-15">
+  <h5>Expire date</h5><input type="text" id='expdate' placeholder="yyyymmdd">
+
+  </div>
+  <br/>  
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" type="button">组图发布</button>
+
+    </form>
+</div>
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close"
+                          data-dismiss="modal" aria-hidden="true">
+                      &times;
+                  </button>
+                  <h4 class="modal-title" id="myModalLabel">
+                      注意!!!
+                  </h4>
+              </div>
+              <div class="modal-body">
+                  确保该组效果所有的素材都已上传
+              </div>
+              <div class="modal-footer">
+
+                  <button type="button" class="btn btn-default" data-dismiss="modal">关闭 </button>
+
+                  <button type="button" class="btn btn-primary" onclick="pickup()">提交</button>
+
+              </div>
+          </div><!-- /.modal-content -->
+      </div><!-- /.modal -->
+  </div>
+  </body>
+<script>
+    function pickup() {
+        var g = $("#group").val();//#gotopagenum是文本框的id属性
+        var r = $("#rrate").val();
+        var exp = $("#expdate").val();
+        var pri = $("#Priority").val();
+                location.href = "/t2p?testg="+g+"&rrate="+r+"&expdate="+exp+"&pri="+pri//location.href实现客户端页面的跳转
+    }
+
+    </script>
+    </html>

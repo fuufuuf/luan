@@ -1,0 +1,13 @@
+<html>
+<%- include('header', {title:'A Luan'}) -%>
+<script src="/javascripts/fileinput.min.js"></script>
+<script src="/javascripts/fileinput_locale_zh.js"></script>
+<link href="/stylesheets/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
+<h2 class="form-signin-heading">图片查看</h2>
+<div class="row">
+    <% pic.forEach(function(listp){ %>
+    <%- include('onep', listp) %>
+    <%console.log(listp) %>
+    <% }) %>
+</div>
+</html>

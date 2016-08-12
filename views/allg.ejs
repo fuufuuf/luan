@@ -1,0 +1,9 @@
+<html>
+<%- include('header', {title:'A Luan'}) -%>
+<h2 class="form-signin-heading">组图片查看</h2>
+<div class="row">
+    <% pic.forEach(function(listp){ %>
+    <%- include('oneg', {url:listp.url, group:listp.groupID, bigurl: listp.bigurl}) %>
+    <% }) %>
+</div>
+</html>

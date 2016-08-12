@@ -1,0 +1,10 @@
+
+<!DOCTYPE html>
+<html>
+<%- include('header') -%>
+<body>
+<ul><% items.forEach(function(listitem){ %>
+<%- include('listitem', {item:listitem}) %>
+<% }) %></ul>
+</body>
+</html>

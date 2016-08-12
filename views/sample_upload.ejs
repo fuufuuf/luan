@@ -1,0 +1,26 @@
+<html>
+<%- include('header', {title:'A Luan'}) -%>
+<script src="/javascripts/fileinput.min.js"></script>
+<script src="/javascripts/fileinput_locale_zh.js"></script>
+<link href="/stylesheets/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
+  <body>
+
+  <div id="container" class="container">
+    <form class="well" role="form" method="post" enctype='multipart/form-data'>
+    <h2 class="form-signin-heading">示例图片上传</h2>
+        <div class="row">
+    <input id="fulAvatar" name="fulAvatar" type="file" class="file" data-show-upload="false" data-preview-file-type="image" />
+            </div>
+    <br/>
+    <legend>图片信息</legend>
+  <label>PasterGoupID</label>
+  <input type="text" name='groupID' placeholder="Number Only">
+        <br/><br/>
+      <label>Image Name</label>
+  <input type="text" name='picName'>
+  <br/>  
+<button id="btnSub" class="btn btn-lg btn-primary" type="submit">upload</button>          
+</form>  
+  </div>
+  </body>
+</html>

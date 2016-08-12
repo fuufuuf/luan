@@ -1,0 +1,40 @@
+<head>
+    <title><%= title %> </title>
+    <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="stylesheets/style.css" rel="stylesheet">
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="/javascripts/bootstrap-confirmation.js"></script>
+</head>
+<body>
+<% if (success) { %>
+<div class="alert alert-success">
+<%= success %>
+</div>
+<% } %>
+<% if (error) { %>
+<div class="alert alert-error">
+<%= error %>
+</div>
+<% } %>
+<form class="form-horizontal" method="post">
+<fieldset>
+<legend>用户登入</legend>
+<div class="control-group">
+<label class="control-label" for="username">用户名</label>
+<div class="controls">
+<input type="text" class="input-xlarge" id="username" name="username">
+</div>
+</div>
+<div class="control-group">
+<label class="control-label" for="password">口令</label>
+<div class="controls">
+<input type="password" class="input-xlarge" id="password" name="password">
+</div>
+</div>
+<div class="form-actions">
+<button type="submit" class="btn btn-primary">登入</button>
+</div>
+</fieldset>
+</form>
+</body>

@@ -1,0 +1,77 @@
+<%- include('header', {title:'A Luan'}) -%>
+<body>
+
+<div class="panel-group" id="accordion">
+   <div class="panel panel-success">
+      <div class="panel-heading">
+         <h4 class="panel-title">
+            <a data-toggle="collapse" 
+               href="#collapseOne">
+             这是我的鼻子
+            </a>
+         </h4>
+      </div>
+      <div id="collapseOne" class="panel-collapse collapse in">
+         <div class="panel-body">       
+          <% nose.forEach(function(nose){ %>
+    <%- include('rawp', nose) %>
+    <% }) %>
+</div>
+   </div>
+ </div>  
+   
+   <div class="panel panel-default">
+      <div class="panel-heading">
+         <h4 class="panel-title">
+            <a data-toggle="collapse" 
+               href="#collapseTwo">
+               这是我的眼睛
+            </a>
+         </h4>
+      </div>
+      
+      <div id="collapseTwo" class="panel-collapse collapse">
+         <div class="panel-body">
+    <% eyes.forEach(function(nose){ %>
+    <%- include('rawp', nose) %>
+    <% }) %>
+         </div>
+      </div>
+   </div>
+   <div class="panel panel-info">
+      <div class="panel-heading">
+         <h4 class="panel-title">
+            <a data-toggle="collapse" 
+               href="#collapseThree">
+               这是我的嘴
+            </a>
+         </h4>
+      </div>
+      <div id="collapseThree" class="panel-collapse collapse">
+         <div class="panel-body">
+          <% mouth.forEach(function(nose){ %>
+    <%- include('rawp', nose) %>
+    <% }) %>
+         </div>
+      </div>
+   </div>
+   <div class="panel panel-warning">
+      <div class="panel-heading">
+         <h4 class="panel-title">
+            <a data-toggle="collapse"  
+               href="#collapseFour">
+               这是我的其他
+            </a>
+         </h4>
+      </div>
+      <div id="collapseFour" class="panel-collapse collapse">
+         <div class="panel-body">
+          <% other.forEach(function(nose){ %>
+    <%- include('rawp', nose) %>
+    <% }) %>
+         </div>
+      </div>
+   </div>
+      
+</div>
+</body>

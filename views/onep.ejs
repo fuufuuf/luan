@@ -1,0 +1,36 @@
+<div class="col-md-3">
+    <div class="thumbnail">
+        <img src=<%= url %>
+             alt="通用的占位符缩略图">
+    </div>
+    <div class="caption">
+        <h4>GroupID = <%= groupID%> PicID = <%= PhotoID%></h4>
+        <form action='/modify' method="post" id="<%= picID%>">
+        <p>
+        shiftScale=<input type="text" class="ptext" name="P1" value=<%= shiftScale%>>
+        shiftX=<input type="text" class="ptext" name="P2" value=<%= shiftX%>>
+        shiftY=<input type="text" class="ptext" name="P3" value=<%= shiftY%>>
+        </p>
+        <p>
+        width=<input type="text" class="ptext" name="P4" value=<%= width%>>
+        height=<input type="text" class="ptext" name="P5" value=<%= height%>>       
+        </p><p>
+	<button type="submit" name="c" value=<%= picID%> class="btn btn-primary">更改</button>
+        <a href="#" class="btn btn-danger <%= picID%>">删除</a>
+        </p>
+            </form>
+    </div>
+</div>
+    <script>
+	$(function() {
+		
+		$('.<%= picID%>').confirmation({
+			onConfirm: function() { 
+			
+			var text = '<input type="hidden" name="d" value=<%= picID%>>';
+			$('.<%= picID%>').append(text);
+			$('#<%= picID%>').submit();},
+			onCancel: function() { alert('cancel') }
+		});
+	});
+    </script>

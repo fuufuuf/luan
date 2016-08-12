@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<%- include('header', {title:'A Luan'}) -%>
+<div id="myAlert" class="alert alert-success">
+    <a href="/push_status" class="close" data-dismiss="alert">&times;</a>
+    <strong>Push works！</strong>
+    <br>
+    推送状态 : <%= objID%>
+    <br>
+    上传时间 : <%=push_date%>
+</div>
+</html>

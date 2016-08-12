@@ -1,0 +1,18 @@
+<html>
+<%- include('header', {title:'A Luan'}) -%>
+<h2 class="form-signin-heading">组图信息 GroupID- <%- group %></h2>
+<div class="row">
+<div class="col-md-3">
+<div class="thumbnail">
+    <img src=<%= groupurl %>
+         alt="通用的占位符缩略图">
+</div>
+    </div>
+    </div>
+<h3 class="form-signin-heading">具体元素</h3>
+<div class="row">
+    <% pic.forEach(function(listp){ %>
+    <%- include('onep', listp) %>
+    <% }) %>
+</div>
+</html>
